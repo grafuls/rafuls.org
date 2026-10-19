@@ -1,13 +1,7 @@
-import { Badge } from "@/components/ui/badge"
-
-interface SkillBadgeProps {
-  name: string
-}
-
-export default function SkillBadge({ name }: SkillBadgeProps) {
+export default function SkillBadge({ name }: { name: string }) {
   return (
-    <Badge variant="secondary" className="text-sm">
+    <li className="rounded-sm border border-border bg-card px-2.5 py-1 font-mono text-xs text-muted-foreground transition-colors duration-200 hover:border-primary/50 hover:text-foreground">
       {name}
-    </Badge>
+    </li>
   )
 }

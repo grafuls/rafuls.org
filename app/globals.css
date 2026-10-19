@@ -2,50 +2,71 @@
 @tailwind components;
 @tailwind utilities;
 
+/*
+  rafuls.org — "terminal editorial" palette
+  Warm neutral base (one gray family, hue ~35), single burnt-amber accent.
+  Shadows tinted warm, never pure black.
+*/
+
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-    --primary: 221.2 83.2% 53.3%;
-    --primary-foreground: 210 40% 98%;
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 221.2 83.2% 53.3%;
-    --radius: 0.5rem;
+    --background: 40 33% 98%;
+    --foreground: 30 12% 13%;
+    --card: 40 30% 99%;
+    --card-foreground: 30 12% 13%;
+    --popover: 40 33% 99%;
+    --popover-foreground: 30 12% 13%;
+    --primary: 24 72% 44%;
+    --primary-foreground: 40 40% 97%;
+    --secondary: 40 18% 93%;
+    --secondary-foreground: 30 12% 22%;
+    --muted: 40 18% 94%;
+    --muted-foreground: 32 9% 36%;
+    --accent: 40 18% 93%;
+    --accent-foreground: 30 12% 22%;
+    --destructive: 4 62% 48%;
+    --destructive-foreground: 40 40% 97%;
+    --border: 40 14% 88%;
+    --input: 40 14% 86%;
+    --ring: 24 72% 44%;
+    --radius: 0.375rem;
+
+    /* z-index scale */
+    --z-grain: 70;
+    --z-skip: 100;
+
+    /* tinted elevation */
+    --shadow-soft: 0 1px 2px hsl(28 30% 20% / 0.05),
+      0 8px 24px -8px hsl(28 35% 25% / 0.12);
+    --shadow-lift: 0 2px 4px hsl(28 30% 20% / 0.06),
+      0 16px 40px -12px hsl(28 40% 25% / 0.18);
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-    --primary: 217.2 91.2% 59.8%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 224.3 76.3% 48%;
+    --background: 32 10% 7%;
+    --foreground: 40 22% 92%;
+    --card: 32 9% 10%;
+    --card-foreground: 40 22% 92%;
+    --popover: 32 9% 10%;
+    --popover-foreground: 40 22% 92%;
+    --primary: 26 78% 58%;
+    --primary-foreground: 30 25% 10%;
+    --secondary: 32 8% 14%;
+    --secondary-foreground: 40 22% 92%;
+    --muted: 32 8% 14%;
+    --muted-foreground: 36 10% 62%;
+    --accent: 32 8% 15%;
+    --accent-foreground: 40 22% 92%;
+    --destructive: 4 55% 42%;
+    --destructive-foreground: 40 40% 97%;
+    --border: 32 8% 17%;
+    --input: 32 8% 19%;
+    --ring: 26 78% 58%;
+
+    --shadow-soft: 0 1px 2px hsl(26 40% 2% / 0.4),
+      0 8px 24px -8px hsl(26 40% 2% / 0.5);
+    --shadow-lift: 0 2px 4px hsl(26 40% 2% / 0.45),
+      0 16px 40px -12px hsl(26 45% 2% / 0.65);
   }
 }
 
@@ -53,10 +74,112 @@
   * {
     @apply border-border;
   }
+  html {
+    scroll-behavior: smooth;
+  }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground antialiased;
+  }
+  /* offset anchor targets for the sticky header */
+  [id] {
+    scroll-margin-top: 5.5rem;
+  }
+  ::selection {
+    background: hsl(var(--primary) / 0.25);
+  }
+  :focus-visible {
+    outline: 2px solid hsl(var(--ring));
+    outline-offset: 2px;
   }
 }
+
+/* ---------- type helpers ---------- */
+
+.font-display {
+  font-family: var(--font-display), Georgia, serif;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+}
+
+.mono-label {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: hsl(var(--muted-foreground));
+}
+
+.tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---------- surfaces ---------- */
+
+.grain {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-grain);
+  pointer-events: none;
+  opacity: 0.5;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3CfeComponentTransfer%3E%3CfeFuncA type='linear' slope='0.05'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* hero ambient: two offset radials instead of an even linear fade */
+.hero-ambient {
+  background:
+    radial-gradient(600px 420px at 12% 18%, hsl(var(--primary) / 0.07), transparent 65%),
+    radial-gradient(720px 500px at 88% 78%, hsl(210 25% 45% / 0.06), transparent 65%);
+}
+
+.shadow-soft {
+  box-shadow: var(--shadow-soft);
+}
+.shadow-lift {
+  box-shadow: var(--shadow-lift);
+}
+
+/* ---------- motion ---------- */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition:
+    opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  transition-delay: var(--reveal-delay, 0ms);
+  will-change: opacity, transform;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+.press {
+  transition: transform 0.15s ease, background-color 0.2s ease,
+    color 0.2s ease, border-color 0.2s ease;
+}
+.press:active {
+  transform: scale(0.98);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .press,
+  .press:active {
+    transform: none;
+    transition: none;
+  }
+}
+
+/* ---------- prose (legal pages) ---------- */
 
 .prose {
   @apply max-w-none;
@@ -69,6 +192,7 @@
 .prose h5,
 .prose h6 {
   @apply font-bold mt-8 mb-4;
+  text-wrap: balance;
 }
 
 .prose h1 {
@@ -85,6 +209,7 @@
 
 .prose p {
   @apply my-4;
+  max-width: 68ch;
 }
 
 .prose ul,
@@ -101,11 +226,12 @@
 }
 
 .prose pre {
-  @apply bg-gray-100 dark:bg-gray-800 p-4 rounded-md overflow-x-auto my-4;
+  @apply bg-muted p-4 rounded-md overflow-x-auto my-4;
 }
 
 .prose code {
-  @apply bg-gray-100 dark:bg-gray-800 px-1 py-0.5 rounded;
+  @apply bg-muted px-1 py-0.5 rounded;
+  font-variant-numeric: tabular-nums;
 }
 
 .prose pre code {

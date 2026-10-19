@@ -3,9 +3,9 @@ import Link from "next/link"
 import { ArrowLeft } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "Privacy Policy | Hermes Agent",
+  title: "Privacy Policy",
   description:
-    "Privacy Policy for Hermes Agent — how we collect, process, and protect personal data.",
+    "Privacy Policy for rafuls.org — how personal data submitted through the contact form is handled.",
 }
 
 export default function PrivacyPolicyPage() {

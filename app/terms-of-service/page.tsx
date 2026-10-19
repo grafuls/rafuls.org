@@ -3,9 +3,9 @@ import Link from "next/link"
 import { ArrowLeft } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "Terms of Service | Hermes Agent",
+  title: "Terms of Service",
   description:
-    "Terms of Service for Hermes Agent AI consultancy services.",
+    "Terms of Service for consultancy services offered via rafuls.org.",
 }
 
 export default function TermsOfServicePage() {
