@@ -21,7 +21,7 @@ export default function Home() {
         <div className="container grid min-h-[80dvh] items-center gap-10 py-20 md:grid-cols-12 md:py-28">
           <div className="md:col-span-7">
             <Reveal>
-              <p className="mono-label">Software engineer · infra &amp; tooling</p>
+              <p className="mono-label">Principal software engineer · infra &amp; tooling</p>
             </Reveal>
             <Reveal delay={80}>
               <h1 className="font-display mt-4 text-5xl text-balance sm:text-6xl lg:text-7xl">
@@ -31,8 +31,8 @@ export default function Home() {
             <Reveal delay={160}>
               <p className="mt-6 max-w-[60ch] text-lg leading-relaxed text-muted-foreground">
                 I build the tools that build your infrastructure. Years of it at
-                Red Hat: bare-metal automation, lab scheduling, chaos
-                engineering — open source that performance teams run on every
+                Red Hat: bare-metal automation, lab scheduling, GPU capacity
+                reaping — open source that performance teams run on every
                 day.
               </p>
             </Reveal>
@@ -244,7 +244,7 @@ export default function Home() {
               </div>
               <div className="flex gap-3">
                 <dt className="w-16 text-muted-foreground">tz</dt>
-                <dd className="text-foreground tabular">ART (UTC−3)</dd>
+                <dd className="text-foreground tabular">CET/CEST (UTC+1/+2)</dd>
               </div>
             </dl>
           </Reveal>

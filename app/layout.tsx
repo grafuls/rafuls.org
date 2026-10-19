@@ -20,14 +20,15 @@ const instrument = Instrument_Serif({
 export const metadata: Metadata = {
   metadataBase: new URL("https://rafuls.org"),
   title: {
-    default: "Gonzalo Rafuls — Software Engineer",
+    default: "Gonzalo Rafuls — Principal Software Engineer",
     template: "%s — Gonzalo Rafuls",
   },
   description:
     "Gonzalo Rafuls builds infrastructure you can trust: bare-metal automation at Red Hat, open-source tools used by performance teams worldwide, and resilient cloud-native systems.",
   keywords: [
     "Gonzalo Rafuls",
-    "software engineer",
+    "principal software engineer",
+    "Brno",
     "infrastructure automation",
     "Redfish",
     "bare metal",
@@ -36,9 +37,9 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Gonzalo Rafuls", url: "https://rafuls.org" }],
   openGraph: {
-    title: "Gonzalo Rafuls — Software Engineer",
+    title: "Gonzalo Rafuls — Principal Software Engineer",
     description:
-      "Infrastructure automation, chaos engineering, and developer tooling. Open source from Red Hat performance teams.",
+      "Infrastructure automation and developer tooling. Open source from Red Hat performance teams.",
     url: "https://rafuls.org",
     siteName: "rafuls.org",
     locale: "en_US",
@@ -46,9 +47,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Gonzalo Rafuls — Software Engineer",
+    title: "Gonzalo Rafuls — Principal Software Engineer",
     description:
-      "Infrastructure automation, chaos engineering, and developer tooling.",
+      "Infrastructure automation and developer tooling.",
   },
   robots: { index: true, follow: true },
   other: {
@@ -111,7 +112,7 @@ export default function RootLayout({
             <footer className="border-t">
               <div className="container flex flex-col items-start justify-between gap-6 py-8 md:flex-row md:items-center md:py-10">
                 <p className="text-sm text-muted-foreground tabular">
-                  © {new Date().getFullYear()} Gonzalo Rafuls · Asunción, Paraguay
+                  © {new Date().getFullYear()} Gonzalo Rafuls · Brno, Czech Republic
                 </p>
                 <nav
                   aria-label="Footer"

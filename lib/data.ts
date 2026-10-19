@@ -11,6 +11,14 @@ export const projects = [
     demoUrl: "https://quads.dev",
   },
   {
+    id: "qiip",
+    title: "Qiip",
+    description:
+      "QUADS Idle Inference Proxy — a tractor beam for idle GPU hardware. Finds unused inference capacity across your fleet and brings it under automation.",
+    tags: ["Python", "GPU", "QUADS", "Proxy"],
+    githubUrl: "https://github.com/grafuls/qiip",
+  },
+  {
     id: "badfish",
     title: "Badfish",
     description:
@@ -54,7 +62,6 @@ export const skills = {
     "Jenkins",
     "Gerrit",
     "Grafana",
-    "Chaos Engineering",
     "Linux",
   ],
 }
